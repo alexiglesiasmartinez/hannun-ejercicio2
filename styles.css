@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --first-color: #ff9b00;
+  --second-color: white;
+  --body-font: "Spartan", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  font-family: var(--body-font);
+  color: var(--second-color);
+}
+
+body {
+  background-color: var(--first-color);
+}
+
+/* #################### 1.- STOPWATCH #################### */
+
+.background {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stopwatch {
+  margin-bottom: 120px;
+}
+
+.stopwatch .stopwatch__time {
+  font-size: 100px;
+  font-weight: 600;
+}
+
+.buttons {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons .buttons__element {
+  background: var(--first-color);
+  font-size: 28px;
+  font-weight: 400;
+  width: 300px !important;
+  padding: 25px 25px;
+  border: 2px solid var(--second-color);
+  border-radius: 20px;
+  transition: all 200ms ease-in-out;
+}
+
+.buttons .buttons__element:hover {
+  background: var(--second-color);
+  color: var(--first-color);
+  cursor: pointer;
+  outline: none;
+}
+
+/* #################### 2.- ANIMATIONS #################### */
+
+#stopMessage {
+  position: absolute;
+  margin: auto;
+  margin-top: -50px;
+  text-align: center;
+  opacity: 0;
+  font-size: 25px;
+  transition: all 250ms ease-in-out;
+}
+
+/* #################### 5.- MEDIQUERIES #################### */
+
+/* SMARTPHONE */
+
+@media only screen and (min-device-width: 280px) and (max-device-width: 768px) {
+  .stopwatch .stopwatch__time {
+    font-size: 50px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stopwatch {
+    margin-bottom: 25px;
+  }
+
+  .buttons .buttons__element {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    border: 2px solid var(--second-color);
+    border-radius: 20px;
+    transition: all 200ms ease-in-out;
+  }
+
+  .buttons .buttons__element:hover {
+    background: var(--first-color);
+    color: var(--second-color);
+    background: none;
+    color: none;
+  }
+
+  #stopMessage {
+    display: none;
+  }
+}
+
+/* TABLET */
+
+@media (min-width: 768px) and (max-width: 1080px) {
+  .buttons {
+    width: 100%;
+  }
+  .stopwatch .stopwatch__time {
+    font-size: 100px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .stopwatch {
+    margin-bottom: 70px;
+  }
+
+  .buttons .buttons__element {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    border: 2px solid var(--second-color);
+    border-radius: 20px;
+    transition: all 200ms ease-in-out;
+  }
+
+  .buttons .buttons__element:hover {
+    background: var(--first-color);
+    color: var(--second-color);
+    background: none;
+    color: none;
+  }
+
+  #stopMessage {
+    display: none;
+  }
+}
+
+/* PC */
+
+@media (min-width: 1080px) {
+}
